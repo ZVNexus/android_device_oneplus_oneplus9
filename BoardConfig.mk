@@ -151,6 +151,7 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/mbhc_dlkm.ko \
     $(KERNEL_MODULES_OUT)/mc44s803.ko \
     $(KERNEL_MODULES_OUT)/msi001.ko \
+    $(KERNEL_MODULES_OUT)/msm_drm.ko \
     $(KERNEL_MODULES_OUT)/mt2060.ko \
     $(KERNEL_MODULES_OUT)/mt2063.ko \
     $(KERNEL_MODULES_OUT)/mt20xx.ko \
@@ -220,6 +221,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/apr_dlkm.ko \
     $(KERNEL_MODULES_OUT)/fingerprint_detect.ko \
     $(KERNEL_MODULES_OUT)/gf_spi_driver.ko \
+    $(KERNEL_MODULES_OUT)/msm_drm.ko \
     $(KERNEL_MODULES_OUT)/op_cmdline.ko \
     $(KERNEL_MODULES_OUT)/oplus_chg.ko \
     $(KERNEL_MODULES_OUT)/project_info.ko \
