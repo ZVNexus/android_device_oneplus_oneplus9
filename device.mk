@@ -192,6 +192,7 @@ PRODUCT_PACKAGES += \
     init.oneplus.overlay.rc \
     init.oneplus.power.rc \
     init.oneplus.telephony.rc \
+    init.oneplus.wlan.rc \
     init.qti.ufs.rc \
     init.target.rc \
     ueventd.lahaina.rc \
@@ -201,6 +202,9 @@ PRODUCT_PACKAGES += \
 KERNEL_MODULES_INSTALL := dlkm
 KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/oneplus9/$(KERNEL_MODULES_INSTALL)/lib/modules
 KERNEL_SD_LLVM_SUPPORT := false
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/modules.blocklist:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.blocklist
 
 # Keymaster
 PRODUCT_COPY_FILES += \

@@ -68,6 +68,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.oneplus.wlan.rc",
+    src: "init.oneplus.wlan.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.target.rc",
     src: "init.target.rc",
     sub_dir: "init/hw",
