@@ -73,6 +73,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.dpmhalservice.enable=1 \
     persist.vendor.dpm.idletimer.mode=default
 
+# Dalvik
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
 # Data
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.data.mode=concurrent \
