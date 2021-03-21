@@ -138,6 +138,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.volume.metadata.method=dm-default-key
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.lights-service.qti \
+    lights.qcom
+
 # Media
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     media.settings.xml=/vendor/etc/media_profiles_vendor.xml \
