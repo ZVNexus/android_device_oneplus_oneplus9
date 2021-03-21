@@ -113,3 +113,6 @@ PRODUCT_PACKAGES += \
 # Vendor Service Manager
 PRODUCT_PACKAGES += \
     vndservicemanager
+
+# Vendor
+$(call inherit-product, vendor/oneplus/oneplus9/oneplus9-vendor.mk)
