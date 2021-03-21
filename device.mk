@@ -94,6 +94,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# GPS
+LOC_HIDL_VERSION = 4.0
+
 # GSI
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
