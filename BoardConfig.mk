@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/oneplus/oneplus8
+DEVICE_PATH := device/oneplus/oneplus9
 
 # A/B
 AB_OTA_UPDATER := true
@@ -21,12 +21,12 @@ AB_OTA_PARTITIONS := \
     dtbo \
     odm \
     product \
-    recovery \
     system \
     system_ext \
     vbmeta \
     vbmeta_system \
-    vendor
+    vendor \
+    vendor_boot
 
 # AVB
 BOARD_AVB_ENABLE := true
@@ -55,19 +55,21 @@ TARGET_2ND_CPU_VARIANT := cortex-a76
 TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := kona
+TARGET_BOOTLOADER_BOARD_NAME := lahaina
 
 # DTB
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_BOOTIMG_HEADER_VERSION := 2
-BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_BOOT_HEADER_VERSION := 3
+BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # DTBO
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Display
-TARGET_DISPLAY_HAS_NO_MASK_LAYER := true
 TARGET_SCREEN_DENSITY := 420
+
+# Factory Reset Protection
+BOARD_FRP_PARTITION_NAME := frp
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
@@ -84,7 +86,7 @@ DEVICE_MATRIX_FILE += device/qcom/common/compatibility_matrix.xml
 BUILD_BROKEN_DUP_RULES := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_oneplus8
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_oneplus9
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
@@ -95,30 +97,35 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.usbcontroller=a600000.dwc3 \
     cgroup.memory=nokmem,nosocket \
     console=ttyMSM0,115200n8 \
-    earlycon=msm_geni_serial,0xa90000 \
+    ip6table_raw.raw_before_defrag=1 \
+    iptable_raw.raw_before_defrag=1 \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
     msm_rtb.filter=0x237 \
-    reboot=panic_warm \
+    pcie_ports=compat \
     service_locator.enable=1 \
-    swiotlb=2048 \
+    swiotlb=0 \
+    loop.max_part=7 \
     video=vfb:640x400,bpp=32,memsize=3072000
 
+BOARD_DO_NOT_STRIP_VENDOR_MODULES := true
 BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_BINARIES := kernel kernel-gki
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
+
+KERNEL_DEFCONFIG := vendor/lahaina-qgki_defconfig
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
-# OTA
-TARGET_OTA_ASSERT_DEVICE := OnePlus8,oneplus8
-
 # Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x6000000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 BOARD_DTBOIMG_PARTITION_SIZE := 0x1800000
 BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_KERNEL-GKI_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x6400000
+BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 BOARD_SUPER_PARTITION_SIZE := 15032385536
@@ -141,11 +148,18 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus8
+BOARD_USES_RECOVERY_AS_BOOT := true
+TARGET_HAS_GENERIC_KERNEL_HEADERS := true
+TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus9
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 150
 TARGET_USERIMAGES_USE_F2FS := true
+
+SOONG_CONFIG_NAMESPACES += ufsbsg
+
+SOONG_CONFIG_ufsbsg += ufsframework
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += \

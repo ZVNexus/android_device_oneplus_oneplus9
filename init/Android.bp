@@ -1,4 +1,4 @@
-// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2021 The LineageOS Project
 //                    Paranoid Android
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,10 +14,10 @@
 // limitations under the License.
 
 cc_library_static {
-    name: "libinit_oneplus8",
+    name: "libinit_oneplus9",
     recovery_available: true,
     shared_libs: ["libbase"],
-    srcs: ["init_oneplus8.cpp"],
+    srcs: ["init_oneplus9.cpp"],
 }
 
 prebuilt_etc {
@@ -62,8 +62,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.oneplus.power.rc",
-    src: "init.oneplus.power.rc",
+    name: "init.oneplus.sensors.rc",
+    src: "init.oneplus.sensors.rc",
     sub_dir: "init",
     vendor: true,
 }
@@ -83,20 +83,15 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "ueventd.lahaina.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.lahaina.rc",
+    device_specific: true,
+}
+
+prebuilt_etc {
     name: "ueventd.oneplus.rc",
     filename: "ueventd.rc",
     src: "ueventd.oneplus.rc",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.chg_policy.sh",
-    src: "init.qti.chg_policy.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.dcvs.sh",
-    src: "init.qti.dcvs.sh",
     vendor: true,
 }

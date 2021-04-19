@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=oneplus8
+DEVICE=oneplus9
 VENDOR=oneplus
 
 # Load extract utilities and do some sanity checks.
@@ -52,14 +52,6 @@ done
 if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
-
-function blob_fixup() {
-    case "${1}" in
-        vendor/lib64/libgf_ud_hal.so|vendor/lib64/libgf_g6_ud_hal.so)
-            sed -i "s|vendor.boot.verifiedbootstate|vendor.boot.fingerprintbstate|g" "${2}"
-            ;;
-    esac
-}
 
 # Initialize the helper.
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"

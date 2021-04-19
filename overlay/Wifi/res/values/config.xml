@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright (c) 2020, The Linux Foundation. All rights reserved.
+    Copyright (c) 2021, The Linux Foundation. All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
     modification, are permitted provided that the following conditions are
@@ -29,6 +29,12 @@
 -->
 <resources>
 
+    <!-- Wifi driver supports OCV for softap -->
+    <bool translatable="false" name="config_vendor_softap_ocv_supported">true</bool>
+
+    <!-- Wifi driver supports beacon protection for softap -->
+    <bool translatable="false" name="config_vendor_softap_beacon_protection_supported">true</bool>
+
     <!-- Wifi driver supports IEEE80211AX for softap -->
     <bool translatable="false" name="config_wifiSoftapIeee80211axSupported">true</bool>
 
@@ -37,5 +43,20 @@
 
     <!-- Wifi driver supports IEEE80211AX single user beamformee for softap -->
     <bool translatable="false" name="config_wifiSoftapHeSuBeamformeeSupported">true</bool>
+
+    <!-- Wifi driver supports IEEE80211AX multiple user beamformer for softap -->
+    <bool translatable="false" name="config_wifiSoftapHeMuBeamformerSupported">false</bool>
+
+    <!-- Wifi driver supports IEEE80211AX TWT (Target Wake Time) for softap -->
+    <bool translatable="false" name="config_wifiSoftapHeTwtSupported">false</bool>
+
+    <!-- Boolean indicating performing a partial initial scan is enabled -->
+    <bool translatable="false" name="config_wifiEnablePartialInitialScan">true</bool>
+
+    <!-- Boolean indicating supports for quick connect -->
+    <bool translatable="false" name="config_wifi_framework_enable_quick_connect">true</bool>
+
+    <!-- Integer for Wifi Partial scan results fetching period(in ms) -->
+    <integer translatable="false" name="config_wifi_partial_scan_results_fetching_period_ms">1000</integer>
 
 </resources>
