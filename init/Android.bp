@@ -26,6 +26,34 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.oneplus.display.rc",
+    src: "init.oneplus.display.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.oneplus.fingerprint.rc",
+    src: "init.oneplus.fingerprint.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.oneplus.power.rc",
+    src: "init.oneplus.power.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.oneplus.sensors.rc",
+    src: "init.oneplus.sensors.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.target.rc",
     src: "init.target.rc",
     sub_dir: "init/hw",
@@ -43,5 +71,12 @@ prebuilt_etc {
     name: "ueventd.oneplus.rc",
     filename: "ueventd.rc",
     src: "ueventd.oneplus.rc",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "wlchgd.rc",
+    src: "wlchgd.rc",
+    sub_dir: "init",
     vendor: true,
 }
