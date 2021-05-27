@@ -186,6 +186,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    AOSPAOnePlus9ProSystemUI \
     AOSPAOnePlus9SeriesFrameworks \
     AOSPAOnePlus9SeriesSystemUI \
     FrameworksResTarget \
@@ -193,6 +194,7 @@ PRODUCT_PACKAGES += \
     OnePlus9ProFrameworks \
     OnePlus9SeriesFrameworks \
     OnePlus9SystemUI \
+    OnePlus9ProSystemUI \
     WifiResTarget
 
 # Partitions
