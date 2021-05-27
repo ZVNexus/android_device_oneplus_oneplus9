@@ -53,13 +53,10 @@ void property_override(char const prop[], char const value[]) {
 
 void vendor_load_properties() {
   std::string variant = GetProperty(PROP_VARIANT, "");
-  if (variant == "12") {
-    property_override("ro.product.device", "OnePlus9");
-    property_override("ro.product.system.device", "OnePlus9");
-    property_override("ro.product.system.model", "OnePlus 9");
-  } else if (variant == "11") {
+  if (variant == "11") {
     property_override("ro.product.device", "OnePlus9Pro");
     property_override("ro.product.system.device", "OnePlus9Pro");
+    property_override("ro.product.model", "OnePlus 9 Pro");
     property_override("ro.product.system.model", "OnePlus 9 Pro");
   }
 }
