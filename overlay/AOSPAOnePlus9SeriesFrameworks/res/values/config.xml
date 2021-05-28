@@ -29,6 +29,11 @@
     <!-- Whether device has an alert slider. -->
     <bool name="config_hasAlertSlider">true</bool>
 
+    <!-- The location of the devices physical alert slider.
+         0: Left
+         1: Right -->
+    <integer name="config_alertSliderLocation">1</integer>
+
     <!-- Gestures' key codes. If the gesture is not supported set it to 0. -->
     <integer name="config_doubleTapKeyCode">143</integer>
     <integer name="config_singleTapKeyCode">67</integer>
