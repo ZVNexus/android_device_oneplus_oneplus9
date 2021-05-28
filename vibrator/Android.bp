@@ -25,9 +25,9 @@ cc_binary {
     name: "vendor.qti.hardware.vibrator.service.oneplus9",
     vendor: true,
     relative_install_path: "hw",
-    init_rc: ["vendor.qti.hardware.vibrator.service.rc"],
+    init_rc: ["vendor.qti.hardware.vibrator.service.oneplus9.rc"],
     vintf_fragments: [
-        "vendor.qti.hardware.vibrator.service.xml",
+        "vendor.qti.hardware.vibrator.service.oneplus9.xml",
     ],
     cflags: Common_CFlags,
     srcs: [

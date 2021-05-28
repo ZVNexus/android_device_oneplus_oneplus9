@@ -3,4 +3,4 @@
 /vendor/bin/tri-state-key_daemon                        u:object_r:tri-state-key_daemon_exec:s0
 
 # Vibrator service
-/vendor/bin/hw/vendor.qti.hardware.vibrator.service.oneplus9       u:object_r:hal_vibrator_default:s0
+/vendor/bin/hw/vendor.qti.hardware.vibrator.service.oneplus9       u:object_r:hal_vibrator_default_exec:s0
