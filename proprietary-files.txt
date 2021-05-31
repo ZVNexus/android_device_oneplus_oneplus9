@@ -977,6 +977,8 @@ vendor/lib64/libfastcvdsp_stub.so
 -vendor/lib64/libfastcvopt.so
 
 # Fingerprint - OOS
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service|66353ca64e617b8ec5eb5a454af4276c82967c5a
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc|200e6af46b49fd6b2a944987de84e6940ffb8429
 vendor/lib64/hw/goodix.fod.lahaina.so|ee5f23014784ed68671bbe3d9c9244fd851275d7
 vendor/lib64/fp_hal_extension.so|19c70d41eaf647ca9433217765e3e9280ce7bc8f
 vendor/lib64/libgf_ud_hal.so|c40b84a59f286c86e4ba4017fb57db1e45b787eb
