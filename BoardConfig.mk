@@ -129,9 +129,7 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/adsp_loader_dlkm.ko \
     $(KERNEL_MODULES_OUT)/apr_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/aw8697.ko \
     $(KERNEL_MODULES_OUT)/bolero_cdc_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/bootloader_log.ko \
     $(KERNEL_MODULES_OUT)/bt_fm_slim.ko \
     $(KERNEL_MODULES_OUT)/btpower.ko \
     $(KERNEL_MODULES_OUT)/camera.ko \
@@ -140,8 +138,6 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/fc0012.ko \
     $(KERNEL_MODULES_OUT)/fc0013.ko \
     $(KERNEL_MODULES_OUT)/fc2580.ko \
-    $(KERNEL_MODULES_OUT)/fingerprint_detect.ko \
-    $(KERNEL_MODULES_OUT)/gf_spi_driver.ko \
     $(KERNEL_MODULES_OUT)/hdmi_dlkm.ko \
     $(KERNEL_MODULES_OUT)/it913x.ko \
     $(KERNEL_MODULES_OUT)/llcc_perfmon.ko \
@@ -160,14 +156,9 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/mxl5005s.ko \
     $(KERNEL_MODULES_OUT)/mxl5007t.ko \
     $(KERNEL_MODULES_OUT)/native_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/oem_aboard.ko \
-    $(KERNEL_MODULES_OUT)/op_cmdline.ko \
-    $(KERNEL_MODULES_OUT)/oplus_chg.ko \
-    $(KERNEL_MODULES_OUT)/op_rf_cable_monitor.ko \
     $(KERNEL_MODULES_OUT)/pinctrl_lpi_dlkm.ko \
     $(KERNEL_MODULES_OUT)/pinctrl_wcd_dlkm.ko \
     $(KERNEL_MODULES_OUT)/platform_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/project_info.ko \
     $(KERNEL_MODULES_OUT)/q6_dlkm.ko \
     $(KERNEL_MODULES_OUT)/q6_notifier_dlkm.ko \
     $(KERNEL_MODULES_OUT)/q6_pdr_dlkm.ko \
@@ -183,7 +174,6 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/rmnet_shs.ko \
     $(KERNEL_MODULES_OUT)/rx_macro_dlkm.ko \
     $(KERNEL_MODULES_OUT)/si2157.ko \
-    $(KERNEL_MODULES_OUT)/sim_holder_detect.ko \
     $(KERNEL_MODULES_OUT)/slimbus.ko \
     $(KERNEL_MODULES_OUT)/slimbus-ngd.ko \
     $(KERNEL_MODULES_OUT)/snd_event_dlkm.ko \
@@ -198,8 +188,6 @@ BOARD_VENDOR_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/tea5761.ko \
     $(KERNEL_MODULES_OUT)/tea5767.ko \
     $(KERNEL_MODULES_OUT)/tfa9894_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/touchscreen.ko \
-    $(KERNEL_MODULES_OUT)/tri_key.ko \
     $(KERNEL_MODULES_OUT)/tua9001.ko \
     $(KERNEL_MODULES_OUT)/tuner-simple.ko \
     $(KERNEL_MODULES_OUT)/tuner-types.ko \
@@ -218,15 +206,9 @@ BOARD_VENDOR_KERNEL_MODULES := \
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := \
     $(KERNEL_MODULES_OUT)/adsp_loader_dlkm.ko \
     $(KERNEL_MODULES_OUT)/apr_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/fingerprint_detect.ko \
-    $(KERNEL_MODULES_OUT)/gf_spi_driver.ko \
-    $(KERNEL_MODULES_OUT)/op_cmdline.ko \
-    $(KERNEL_MODULES_OUT)/oplus_chg.ko \
-    $(KERNEL_MODULES_OUT)/project_info.ko \
     $(KERNEL_MODULES_OUT)/q6_notifier_dlkm.ko \
     $(KERNEL_MODULES_OUT)/q6_pdr_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/snd_event_dlkm.ko \
-    $(KERNEL_MODULES_OUT)/touchscreen.ko
+    $(KERNEL_MODULES_OUT)/snd_event_dlkm.ko
 
 KERNEL_DEFCONFIG := vendor/lahaina-qgki_defconfig
 
