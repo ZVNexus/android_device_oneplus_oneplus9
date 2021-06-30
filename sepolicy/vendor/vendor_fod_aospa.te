@@ -1,0 +1,3 @@
+binder_call(vendor_fod, hal_display_default)
+binder_call(vendor_fod, hal_fingerprint_default)
+allow vendor_fod { hal_oneplus_fingerprint_hwservice hal_display_hwservice }:hwservice_manager find;
